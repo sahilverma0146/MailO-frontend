@@ -4,8 +4,8 @@ import { createContext, useState, useContext, useEffect } from "react";
 // IMPORTS
 import toast, { Toaster } from "react-hot-toast";
 
-export const user_Service = import.meta.VITE_USER_URL;
-export const chat_Service = import.meta.VITE_CHAT_URL;
+export const user_Service = import.meta.env.VITE_USER_URL;
+export const chat_Service = import.meta.env.VITE_CHAT_URL;
 
 export const isAuthContext = createContext();
 
