@@ -1,0 +1,25 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/users/(.*)",
+      "destination": "http://3.110.174.233:5000/$1"
+    },
+    {
+      "source": "/api/chat/(.*)",
+      "destination": "http://3.110.174.233:5002/$1"
+    },
+    {
+      "source": "/api/mail/(.*)",
+      "destination": "http://3.110.174.233:5003/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)/",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
