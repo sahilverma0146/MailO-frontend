@@ -35,11 +35,12 @@ export const SocketProvider = ({ children }) => {
     //   path: "/api/socket",
     //   query: { userId: user.user?._id },
     // });
-
-    const newSocket = io("wss://3.110.174.233:5003", {
-      query: { userId: user.user?._id },
+    if (!user && !user.user?._id) {
+      return;
+    }
+    const newSocket = io("wss://3.110.174.233:5002/$1", {
+      query: { userId: user.user._id },
     });
-
     // Socket connection events
     newSocket.on("connect", () => {
       console.log("Socket connected successfully");
